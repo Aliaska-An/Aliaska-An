@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>509</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LW1</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QComboBox" name="comboBox">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="duplicatesEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>GL_POINTS</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GL_LINES</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GL_LINE_STRIP</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GL_LINE_LOOP</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GL_TRIANGLES</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GL_TRIANGLE_STRIP</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GL_TRIANGLE_FAN</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GL_QUADS</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GL_QUAD_STRIP</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>GL_POLYGON</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="GLWidget" name="MyGLWidget" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>696</width>
+          <height>452</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>696</width>
+          <height>452</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GLWidget</class>
+   <extends>QWidget</extends>
+   <header>glwidget.h</header>
+   <container>1</container>
+   <slots>
+    <slot>changeShapePicture(QString)</slot>
+    <slot>changeX(int)</slot>
+    <slot>changeY(int)</slot>
+    <slot>changeWidth(int)</slot>
+    <slot>changeHeight(int)</slot>
+    <slot>changeFunc(int)</slot>
+    <slot>changeRef(int)</slot>
+    <slot>changeSfactor(QString)</slot>
+    <slot>changeDfactor(QString)</slot>
+    <slot>changeType(QString)</slot>
+    <slot>do_blend1(QString)</slot>
+    <slot>do_blend2(QString)</slot>
+    <slot>do_atest(QString)</slot>
+    <slot>do_atest2(int)</slot>
+    <slot>cut_x(int)</slot>
+    <slot>cut_y(int)</slot>
+    <slot>change_height(int)</slot>
+    <slot>change_width(int)</slot>
+    <slot>step(int)</slot>
+    <slot>changePrimitive(QString)</slot>
+    <slot>changeAlphaFunc(QString)</slot>
+    <slot>changeIterNum(int)</slot>
+    <slot>changeFracShape(QString)</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>MyGLWidget</receiver>
+   <slot>changeShapePicture(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>359</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
