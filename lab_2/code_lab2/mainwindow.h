@@ -15,7 +15,6 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    QString getComboBoxValue();
 private:
     Ui::MainWindow *ui;
 };
